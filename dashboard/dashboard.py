@@ -46,7 +46,7 @@ def create_sum_order_items_df(df, group_by_column):
 
 def load_and_preprocess_data():
     """Load and preprocess the data from CSV file."""
-    df = pd.read_csv(DATA_PATH, parse_dates=["order_purchase_timestamp", "order_delivered_customer_date"])
+    df = pd.read_csv(DATA_PATH, parse_dates=["order_purchase_timestamp"])
     df.sort_values(by="order_purchase_timestamp", inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
